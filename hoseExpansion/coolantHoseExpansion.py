@@ -9,40 +9,41 @@ import math # needed for pi
 # Calculate lenght of hose in cm
 lengthFeet = float(input("What is the length of hose in feet? "))
 lengthCm = lengthFeet * 12 * 2.54
-print("The length of a ", f"{lengthFeet:.3f}", " foot hose is", f"{lengthCm:.3f}", " cm \n")
+#print("The length of a ", f"{lengthFeet:.3f}", " foot hose is", f"{lengthCm:.3f}", " cm \n")
+print(f"The length of a {lengthFeet:.3f} foot hose is {lengthCm:.3f} cm \n") # more efficient
 
 # Calculate the cross sectional area hose with no pressure
 diamInch = float(input("What is the diameter of hose in inches? "))
 diamInitCm = diamInch * 2.54
-print("The diameter in cm is: ", f"{diamInitCm:.3f}")
+print(f"The diameter in cm is: {diamInitCm:.3f}")
 areaInit = ((diamInitCm)/2)**2 * math.pi
-print("The area of an unpressurized hose is ", f"{areaInit:.3f}", "cm2")
+print(f"The area of an unpressurized hose is {areaInit:.3f} cm2")
 
 # Calculate the cross sectional area of pressurized hose
 diamPress = float(input("What is the expected change in diameter of hose when pressurized in cm? ")) + diamInitCm
-print("The pressurized diameter in cm is: ", f"{diamPress:.3f}")
+print(f"The pressurized diameter in cm is: {diamPress:.3f}")
 areaPress = (diamPress/2)**2 * math.pi
-print("The area of a pressurized hose is ", f"{areaPress:.3f}", "cm2 \n")
+print(f"The area of a pressurized hose is {areaPress:.3f} cm2 \n")
 
 # Calculate volumes of hoses and change in volume
 volumeInit = lengthCm * areaInit
 volumePress = lengthCm * areaPress
 volumeChange = volumePress - volumeInit
-print("The initial volume is ", f"{volumeInit:.3f}", "cm3 ", "The pressurized volume is ", f"{volumePress:.3f}", "cm3 ", "The change in volume is ", f"{volumeChange:.3f}", "cm3 \n")
+print(f"The initial volume is {volumeInit:.3f} cm3 The pressurized volume is {volumePress:.3f} cm3 The change in volume is {volumeChange:.3f}cm3 \n")
 
 numberHoses = int(input("How many hoses are in the test? "))
-print("For ", numberHoses, " Hoses the volumes are: ")
-print("The initial volume is ", f"{volumeInit * numberHoses:.3f}", "cm3 ", "The pressurized volume is ", f"{volumePress * numberHoses:.3f}", "cm3 ", "The change in volume is ", f"{volumeChange * numberHoses:.3f}", "cm3 \n")
+print(f"For {numberHoses} Hoses the volumes are: ")
+print(f"The initial volume is {volumeInit * numberHoses:.3f} cm3 The pressurized volume is {volumePress * numberHoses:.3f} cm3 The change in volume is {volumeChange * numberHoses:.3f} cm3 \n")
 
 # Calculate stroke length needed
 boreInch = float(input("What is the bore diameter of the cylinder in inches "))
 boreCm = boreInch * 2.54
 stroke = (volumeChange * numberHoses)/(math.pi* (boreCm/2)**2)
-print("The stroke length for ", numberHoses, "hoses is", f"{stroke:.3f}", "cm or", f"{stroke/2.54:.3f}", "inches")
+print(f"The stroke length for {numberHoses} hoses is {stroke:.3f} cm or {stroke/2.54:.3f} inches")
 
 # Calculate force needed to reach 100 PSI
 forceLbf = 100 * math.pi * boreInch**2
-print("The force need for a ", boreInch, "inch cylinder to reach 100 psi is ", f"{forceLbf:.3f}", " LbF or", f"{forceLbf*4.448:.3f}", "Newtons \n")
+print(f"The force need for a {boreInch} inch cylinder to reach 100 psi is  {forceLbf:.3f} LbF or{forceLbf*4.448:.3f} Newtons \n")
 
 
 # Code from Gpt5-mini to calc change in volume of water with temperature change
