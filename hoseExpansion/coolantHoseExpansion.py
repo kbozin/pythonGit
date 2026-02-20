@@ -43,7 +43,7 @@ print(f"The stroke length for {numberHoses} hoses is {stroke:.3f} cm or {stroke/
 
 # Calculate force needed to reach 100 PSI
 forceLbf = 100 * math.pi * boreInch**2
-print(f"The force need for a {boreInch} inch cylinder to reach 100 psi is  {forceLbf:.3f} LbF or{forceLbf*4.448:.3f} Newtons \n")
+print(f"The force need for a {boreInch} inch cylinder to reach 100 psi is  {forceLbf:.3f} LbF or {forceLbf*4.448:.3f} Newtons \n")
 
 
 # Code from Gpt5-mini to calc change in volume of water with temperature change
